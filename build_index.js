@@ -15,7 +15,7 @@ const html = `<!DOCTYPE html>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;700;800&family=Montserrat:wght@300;400;500;600;700&family=Oswald:wght@600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
 
@@ -172,11 +172,11 @@ ${mapSvg}
   </section>
 
   <!-- Particles.js Engine (Vincent Garreau) -->
-  <script src="/particles.min.js"></script>
+  <script src="./particles.min.js"></script>
   <!-- Interactive Silk & Animation Script -->
-  <script src="/script.js"></script>
+  <script src="./script.js"></script>
   <!-- react-fast-marquee Production Engine Bundle -->
-  <script src="/marquee.bundle.js"></script>
+  <script src="./marquee.bundle.js"></script>
 </body>
 </html>`;
 
