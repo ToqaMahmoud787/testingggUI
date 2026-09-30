@@ -24,6 +24,18 @@ const server = http.createServer((req, res) => {
   fs.readFile(filePath, (err, content) => {
     if (err) {
       if (err.code === 'ENOENT') {
+        // SPA fallback for deep routes (e.g. /saudi-arabia/identity/business) without an extension
+        if (!ext && !reqPath.startsWith('/images/')) {
+          return fs.readFile(path.join(__dirname, 'index.html'), (fallbackErr, indexContent) => {
+            if (fallbackErr) {
+              res.writeHead(404, { 'Content-Type': 'text/plain' });
+              res.end('Not Found');
+            } else {
+              res.writeHead(200, { 'Content-Type': 'text/html' });
+              res.end(indexContent, 'utf-8');
+            }
+          });
+        }
         res.writeHead(404, { 'Content-Type': 'text/plain' });
         res.end('Not Found');
       } else {
