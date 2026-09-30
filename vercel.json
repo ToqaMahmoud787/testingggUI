@@ -1,9 +1,10 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "cleanUrls": false,
+  "buildCommand": "npm run build",
+  "outputDirectory": ".",
   "rewrites": [
     {
-      "source": "/((?!.*\\.[\\w]+$|images/).*)",
+      "source": "/((?!.*\\.).*)",
       "destination": "/index.html"
     }
   ]
