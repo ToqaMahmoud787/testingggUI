@@ -1,0 +1,685 @@
+/* ==========================================================================
+   SAUDI IDENTITY & BUSINESS - HIGH FIDELITY HERO SECTION
+   Visual match for the reference composition:
+   - Deep midnight navy atmosphere (#06163d)
+   - Luminous Saudi Arabia constellation map with interconnected nodes & flares
+   - Flowing golden Hejazi silk ribbon waves (Bisht gold zari threads)
+   - Thin gold orbital arcs with satellite flares
+   - Traditional Saudi geometric diamond motifs along the left edge
+   - Bold condensed typography with creamy white tone and tight line-height
+   - Dual centered pill CTA buttons with warm gold glow
+   - Docked bottom gold ticker marquee with Islamic emblem & bilingual text
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Google Fonts Import
+   -------------------------------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@600;700;800&family=Montserrat:wght@300;400;500;600;700&family=Oswald:wght@600;700&family=Outfit:wght@300;400;500;600&display=swap');
+
+/* --------------------------------------------------------------------------
+   CSS Variables / Design Tokens
+   -------------------------------------------------------------------------- */
+:root {
+  /* Colors */
+  --bg-midnight: #06163d;
+  --bg-deep-navy: #040e29;
+  --bg-navy-translucent: rgba(6, 22, 61, 0.65);
+
+  --gold-primary: #f3b844;
+  --gold-bright: #ffd46a;
+  --gold-champagne: #e9c47a;
+  --gold-muted-line: rgba(230, 183, 92, 0.28);
+  --gold-glow: rgba(243, 184, 68, 0.45);
+  --gold-glow-intense: rgba(255, 212, 106, 0.65);
+  --gold-ticker: #ebb85c;
+  --gold-ticker-dark: #e0ab4e;
+
+  --text-primary: #f6f2ea;
+  --text-muted: rgba(255, 255, 255, 0.72);
+  --text-subtle: rgba(246, 242, 234, 0.88);
+  --text-navy: #06163d;
+  --text-navy-deep: #05112f;
+
+  /* Typography */
+  --font-headline: 'Oswald', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Outfit', 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-arabic: 'Cairo', 'Amiri', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Layout */
+  --hero-desktop-height: 760px;
+  --ticker-height: 78px;
+}
+
+/* --------------------------------------------------------------------------
+   Reset & Base Styles
+   -------------------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background-color: var(--bg-deep-navy);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* --------------------------------------------------------------------------
+   Hero Section Container
+   -------------------------------------------------------------------------- */
+.saudi-hero {
+  position: relative;
+  width: 100%;
+  min-height: var(--hero-desktop-height);
+  height: clamp(720px, 100vh, 820px);
+  background: radial-gradient(ellipse 90% 70% at 50% 45%, #081d4e 0%, var(--bg-midnight) 45%, var(--bg-deep-navy) 100%);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  user-select: none;
+}
+
+/* --------------------------------------------------------------------------
+   Top-Left Breadcrumb
+   -------------------------------------------------------------------------- */
+.hero-breadcrumb {
+  position: absolute;
+  top: 28px;
+  left: 48px;
+  z-index: 25;
+  display: flex;
+  align-items: center;
+  font-family: var(--font-body);
+  font-size: 17px;
+  font-weight: 400;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+  opacity: 0.95;
+}
+
+.breadcrumb-link {
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.breadcrumb-link:hover {
+  color: #ffffff;
+  opacity: 1;
+}
+
+.breadcrumb-separator {
+  margin: 0 12px;
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 14px;
+}
+
+.breadcrumb-active {
+  color: var(--gold-primary);
+  font-weight: 500;
+}
+
+/* --------------------------------------------------------------------------
+   Background Decorative Elements: Left Diamond Motifs
+   -------------------------------------------------------------------------- */
+.left-geometric-motifs {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 240px;
+  height: 100%;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.diamond {
+  position: absolute;
+  transform: rotate(45deg);
+  border: 1px solid rgba(243, 184, 68, 0.22);
+}
+
+.diamond.solid {
+  background: rgba(212, 175, 55, 0.14);
+}
+
+.diamond.solid-deep {
+  background: rgba(180, 140, 40, 0.22);
+  border-color: rgba(243, 184, 68, 0.35);
+}
+
+.diamond.grid-3x3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3px;
+  padding: 3px;
+  border-color: rgba(243, 184, 68, 0.2);
+}
+
+.mini-diamond {
+  width: 100%;
+  height: 100%;
+  background: rgba(243, 184, 68, 0.2);
+}
+
+/* Specific Placements matching reference */
+.diamond-1 {
+  width: 76px;
+  height: 76px;
+  left: 12px;
+  top: 48%;
+  background: rgba(200, 155, 50, 0.16);
+  border: 1.5px solid rgba(243, 184, 68, 0.32);
+}
+
+.diamond-2 {
+  width: 48px;
+  height: 48px;
+  left: 64px;
+  top: 36%;
+  background: rgba(243, 184, 68, 0.18);
+}
+
+.diamond-3 {
+  width: 52px;
+  height: 52px;
+  left: 28px;
+  top: 22%;
+}
+
+.diamond-4 {
+  width: 32px;
+  height: 32px;
+  left: 92px;
+  top: 56%;
+  background: rgba(243, 184, 68, 0.12);
+}
+
+.diamond-5 {
+  width: 24px;
+  height: 24px;
+  left: 45px;
+  top: 68%;
+}
+
+.diamond-6 {
+  width: 18px;
+  height: 18px;
+  left: 110px;
+  top: 44%;
+}
+
+.diamond-7 {
+  width: 60px;
+  height: 60px;
+  left: -20px;
+  top: 32%;
+}
+
+/* --------------------------------------------------------------------------
+   Particles.js Container
+   - Layer 2: Right above background, behind Saudi map, silk waves, and text
+   - pointer-events: auto on canvas for interactive hover repulse & click push
+   -------------------------------------------------------------------------- */
+#particles-js {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: auto;
+}
+
+#particles-js canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  pointer-events: auto;
+}
+
+/* --------------------------------------------------------------------------
+   Dynamic Canvas: Silk Filaments & Twinkling Sparkles
+   - Layer 6: Above Saudi map (4) and flare beam (5), below content (10)
+   -------------------------------------------------------------------------- */
+#silk-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 6;
+}
+
+/* --------------------------------------------------------------------------
+   Central Saudi Arabia Constellation Map
+   -------------------------------------------------------------------------- */
+.map-container {
+  position: absolute;
+  top: 42%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: clamp(540px, 46vw, 760px);
+  aspect-ratio: 800 / 600;
+  pointer-events: none;
+  z-index: 4;
+}
+
+.saudi-constellation-svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  filter: drop-shadow(0 0 25px rgba(243, 184, 68, 0.15));
+}
+
+.star-node {
+  animation: nodeTwinkle 4s ease-in-out infinite;
+}
+
+.pulsing-flare {
+  animation: flarePulse 3.5s ease-in-out infinite alternate;
+}
+
+@keyframes nodeTwinkle {
+
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: scale(0.9);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+}
+
+@keyframes flarePulse {
+  0% {
+    opacity: 0.65;
+    transform: scale(0.85);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Horizontal Lens Flare Beam
+   -------------------------------------------------------------------------- */
+.horizontal-flare-beam {
+  position: absolute;
+  top: 53%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 1400px;
+  height: 3px;
+  background: radial-gradient(ellipse at center, rgba(255, 230, 160, 0.8) 0%, rgba(243, 184, 68, 0.4) 30%, rgba(243, 184, 68, 0.1) 65%, transparent 100%);
+  box-shadow: 0 0 40px 10px rgba(243, 184, 68, 0.28);
+  pointer-events: none;
+  z-index: 5;
+  opacity: 0.85;
+}
+
+/* --------------------------------------------------------------------------
+   Main Content Layer (Headline, Subtitle, CTA Row)
+   -------------------------------------------------------------------------- */
+.hero-content {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: auto 0;
+  padding: 20px 24px 0;
+  width: 100%;
+  pointer-events: none;
+}
+
+.hero-title,
+.hero-subtitle,
+.hero-actions,
+.hero-actions .btn {
+  pointer-events: auto;
+}
+
+.hero-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: var(--font-headline);
+  font-weight: 700;
+  font-size: clamp(52px, 5.8vw, 104px);
+  line-height: 0.96;
+  letter-spacing: clamp(8px, 1.1vw, 20px);
+  color: var(--text-primary);
+  text-transform: uppercase;
+  text-shadow: 0 4px 28px rgba(0, 0, 0, 0.55), 0 0 40px rgba(243, 184, 68, 0.15);
+  margin-bottom: 22px;
+}
+
+.title-line {
+  display: block;
+  white-space: nowrap;
+}
+
+.hero-subtitle {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: clamp(16px, 1.4vw, 24px);
+  letter-spacing: clamp(3px, 0.32vw, 6.5px);
+  color: var(--text-subtle);
+  margin-bottom: 38px;
+  max-width: 900px;
+}
+
+/* --------------------------------------------------------------------------
+   CTA Buttons Row
+   -------------------------------------------------------------------------- */
+.hero-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  width: 100%;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  height: 64px;
+  width: clamp(260px, 22vw, 345px);
+  border-radius: 9999px;
+  font-family: var(--font-body);
+  font-size: clamp(17px, 1.15vw, 21px);
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.24s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Primary Button (Solid Gold) */
+.btn-primary {
+  background: var(--gold-primary);
+  color: var(--text-navy);
+  border: 1px solid rgba(255, 230, 160, 0.6);
+  box-shadow: 0 10px 32px var(--gold-glow), 0 0 20px rgba(243, 184, 68, 0.35);
+}
+
+.btn-primary:hover {
+  background: #f7c55c;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 40px var(--gold-glow-intense), 0 0 28px rgba(255, 212, 106, 0.5);
+  color: var(--text-navy-deep);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+/* Secondary Button (Glass Navy with Gold Outline) */
+.btn-secondary {
+  background: var(--bg-navy-translucent);
+  color: #ffffff;
+  border: 1.5px solid var(--gold-primary);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.btn-secondary:hover {
+  background: rgba(243, 184, 68, 0.15);
+  border-color: #ffd46a;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), 0 0 20px rgba(243, 184, 68, 0.25);
+}
+
+.btn-secondary:active {
+  transform: translateY(0);
+}
+
+.btn-arrow {
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.btn:hover .btn-arrow {
+  transform: translateX(4px);
+}
+
+/* --------------------------------------------------------------------------
+   Bottom Gold Ticker Marquee - Pure CSS Hardware-Accelerated Infinite Stream
+   - Scrolls smoothly and continuously from right to left
+   - Single animated flex track translating from 0 to -50%
+   - No lag, no stutter, no pause, no jump, no gap, no visible restart point
+   - Pure GPU compositing with translate3d
+   -------------------------------------------------------------------------- */
+.bottom-ticker-bar {
+  position: relative;
+  width: 100%;
+  height: var(--ticker-height);
+  background: var(--gold-ticker);
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  user-select: none;
+}
+
+/* Left Cultural Islamic Geometric Emblem */
+.ticker-emblem-left {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 76px;
+  background: linear-gradient(to right, var(--gold-ticker) 75%, rgba(235, 184, 92, 0) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 25;
+  pointer-events: none;
+}
+
+.ticker-emblem-svg {
+  width: 38px;
+  height: 38px;
+  fill: var(--text-navy);
+  margin-right: 14px;
+}
+
+/* Outer Overflow Wrapper */
+.ticker-track-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+/* --------------------------------------------------------------------------
+   react-fast-marquee Production Engine Styles
+   - Powered by official react-fast-marquee
+   - Continuous seamless translation at 35px/s
+   - Hardware accelerated transform: translateZ(0)
+   - Zero gaps, zero stutter, zero visible jump
+   -------------------------------------------------------------------------- */
+#hero-marquee-root {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+#hero-marquee-root .rfm-marquee-container {
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+#hero-marquee-root .rfm-marquee {
+  flex: 0 0 auto;
+  min-width: 100%;
+  z-index: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  pointer-events: none;
+}
+
+#hero-marquee-root .rfm-initial-child-container,
+#hero-marquee-root .rfm-child {
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+}
+
+/* Crucial: Must NEVER pause on hover, focus, touch, or active */
+.bottom-ticker-bar,
+.ticker-track-container,
+#hero-marquee-root,
+.ticker-item-set {
+  pointer-events: none;
+}
+
+/* Continuous flex set rendered and cloned seamlessly by react-fast-marquee */
+.ticker-item-set {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.ticker-word {
+  font-family: var(--font-body);
+  font-size: clamp(20px, 1.5vw, 27px);
+  font-weight: 700;
+  color: var(--text-navy);
+  letter-spacing: 0.05em;
+}
+
+.ticker-word.arabic {
+  font-family: var(--font-arabic);
+  font-weight: 800;
+  font-size: clamp(22px, 1.6vw, 29px);
+  margin-top: -2px;
+}
+
+.ticker-bullet {
+  font-size: 16px;
+  margin: 0 clamp(16px, 1.8vw, 28px);
+  color: var(--text-navy);
+  display: inline-block;
+}
+
+.ticker-divider {
+  font-size: 24px;
+  font-weight: 300;
+  margin: 0 clamp(20px, 2.2vw, 36px);
+  color: var(--text-navy);
+  opacity: 0.65;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Adaptations
+   -------------------------------------------------------------------------- */
+@media (max-width: 1200px) {
+  :root {
+    --hero-desktop-height: 700px;
+    --ticker-height: 72px;
+  }
+
+  .hero-breadcrumb {
+    top: 22px;
+    left: 32px;
+    font-size: 15px;
+  }
+
+  .left-geometric-motifs {
+    opacity: 0.6;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --hero-desktop-height: auto;
+    --ticker-height: 64px;
+  }
+
+  .saudi-hero {
+    height: auto;
+    min-height: 100vh;
+    padding-top: 70px;
+  }
+
+  .hero-breadcrumb {
+    top: 18px;
+    left: 20px;
+    font-size: 13px;
+  }
+
+  .breadcrumb-separator {
+    margin: 0 6px;
+  }
+
+  .hero-title {
+    margin-bottom: 16px;
+  }
+
+  .hero-subtitle {
+    font-size: 15px;
+    letter-spacing: 2px;
+    margin-bottom: 28px;
+    padding: 0 16px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 40px;
+  }
+
+  .btn {
+    width: 90%;
+    max-width: 320px;
+    height: 56px;
+  }
+
+  .map-container {
+    width: 88vw;
+    top: 38%;
+  }
+
+  .left-geometric-motifs {
+    display: none;
+  }
+}

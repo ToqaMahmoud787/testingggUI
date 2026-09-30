@@ -1,0 +1,24 @@
+{
+  "name": "testing-ui",
+  "version": "1.0.0",
+  "description": "",
+  "main": "build_index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "build:marquee": "esbuild marquee.jsx --bundle --minify --define:process.env.NODE_ENV=\\\"production\\\" --outfile=marquee.bundle.js",
+    "build": "npm run build:marquee"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "react-fast-marquee": "^1.6.5"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2"
+  }
+}
