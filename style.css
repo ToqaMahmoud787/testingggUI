@@ -258,6 +258,8 @@ body {
   height: 100%;
   pointer-events: none;
   z-index: 6;
+  will-change: transform;
+  transform: translateZ(0);
 }
 
 /* --------------------------------------------------------------------------
@@ -272,6 +274,8 @@ body {
   aspect-ratio: 800 / 600;
   pointer-events: none;
   z-index: 4;
+  will-change: transform;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .saudi-constellation-svg {
@@ -681,5 +685,22 @@ body {
 
   .left-geometric-motifs {
     display: none;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Accessibility: Prefers Reduced Motion
+   - Suspends all continuous CSS keyframe animations
+   - Halts marquee continuous loop
+   - Preserves complete static visual fidelity
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .star-node,
+  .pulsing-flare {
+    animation: none !important;
+  }
+
+  #hero-marquee-root .rfm-marquee {
+    animation-play-state: paused !important;
   }
 }

@@ -4,7 +4,8 @@
   "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node dev-server.js",
+    "dev": "node dev-server.js",
+    "serve": "node dev-server.js",
     "build:marquee": "esbuild marquee.jsx --bundle --minify --define:process.env.NODE_ENV=\\\"production\\\" --outfile=marquee.bundle.js",
     "build": "npm run build:marquee"
   },
